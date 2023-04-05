@@ -6,7 +6,7 @@ todos = functions1.get_todos()
 
 
 def add_todo():
-    todo.local = st.session_state["uj_feladat"] + "\n"
+    todo = st.session_state["uj_feladat"] + "\n"
     todos.append(todo)
     functions1.write_todos(todos)
 
