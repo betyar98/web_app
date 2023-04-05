@@ -1,0 +1,3 @@
+Megcsinálni az usb tiltást
+Master Python
+exe létrehozása windowsra
