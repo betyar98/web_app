@@ -2,25 +2,25 @@ import streamlit as st
 import functions
 
 
-feladatok = functions.get_todos()
+todos = functions.get_todos()
 
 
 def add_todo():
-    feladat = st.session_state["uj_feladat"] + "\n"
-    feladatok.append(feladat)
-    functions.write_todos(feladatok)
+    todo.local = st.session_state["uj_feladat"] + "\n"
+    todos.append(todo)
+    functions.write_todos(todos)
 
 
 st.title("Az Én feladat listám")
 st.subheader("Ez az én feladatlistám")
 st.write("Ez az alkalmazás megnöveli a produktivitásod.")
 
-for index, feladat in enumerate(feladatok):
-    checkbox = st.checkbox(feladat, key=feladat)
+for index, todo in enumerate(todos):
+    checkbox = st.checkbox(todo, key=todo)
     if checkbox:
-        feladatok.pop(index)
-        functions.write_todos(feladatok)
-        del st.session_state[feladat]
+        todos.pop(index)
+        functions.write_todos(todos)
+        del st.session_state[todo]
         st.experimental_rerun()
 
 st.text_input(label="Új feladat hozzáadása:", placeholder="Írj be egy új feladatot...",
