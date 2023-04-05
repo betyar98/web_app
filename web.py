@@ -23,6 +23,5 @@ for index, todo in enumerate(todos):
         del st.session_state[todo]
         st.experimental_rerun()
 
-
 st.text_input(label="Új feladat hozzáadása:", placeholder="Írj be egy új feladatot...",
               on_change=add_todo, key="uj_feladat")
