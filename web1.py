@@ -1,14 +1,14 @@
 import streamlit as st
-import functions
+import functions1
 
 
-todos = functions.get_todos()
+todos = functions1.get_todos()
 
 
 def add_todo():
     todo.local = st.session_state["uj_feladat"] + "\n"
     todos.append(todo)
-    functions.write_todos(todos)
+    functions1.write_todos(todos)
 
 
 st.title("Az Én feladat listám")
@@ -19,7 +19,7 @@ for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=todo)
     if checkbox:
         todos.pop(index)
-        functions.write_todos(todos)
+        functions1.write_todos(todos)
         del st.session_state[todo]
         st.experimental_rerun()
 
